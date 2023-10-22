@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+enum BookCategory {
+  MYSTERY = 0;
+  FANTASY = 1;
+  SCIENCE_FICTION = 2;
+  SELF_HELP = 3;
+}
+
+message BookRecommendationRequest {
+  int32 userID = 1;
+  BookCategory category = 2;
+  int32 maxResults = 3;
+}
+
+message BookRecommendation {
+  int32 bookID = 1;
+  string title = 2; // Field number, not default
+}
+
+message BookRecommendationResponse {
+  repeated BookRecommendation recommendations = 1;
+}
+
+service BookRecommendationService {
+  rpc RecommendBooks(BookRecommendationRequest)
+      returns (BookRecommendationResponse);
+}
