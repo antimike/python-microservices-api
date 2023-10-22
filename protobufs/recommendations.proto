@@ -1,10 +1,11 @@
 syntax = "proto3";
 
 enum BookCategory {
-  MYSTERY = 0;
-  FANTASY = 1;
-  SCIENCE_FICTION = 2;
-  SELF_HELP = 3;
+  UNSPECIFIED = 0;
+  MYSTERY = 1;
+  FANTASY = 2;
+  SCIENCE_FICTION = 3;
+  SELF_HELP = 4;
 }
 
 message BookRecommendationRequest {
